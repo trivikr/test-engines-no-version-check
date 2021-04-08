@@ -80,7 +80,12 @@ $ npm --version
 5.6.0
 
 $ npm install test-engines-node-version-check@0.1.1
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN test-warning@1.0.0 No description
+npm WARN test-warning@1.0.0 No repository field.
 
++ test-engines-node-version-check@0.1.1
+added 1 package in 0.796s
 ```
 
 ### yarn
@@ -92,6 +97,13 @@ $ yarn --version
 1.22.10
 
 $ yarn add test-engines-node-version-check@0.1.1
+yarn add v1.22.10
+info No lockfile found.
+[1/4] 🔍  Resolving packages...
+[2/4] 🚚  Fetching packages...
+error test-engines-node-version-check@0.1.1: The engine "node" is incompatible with this module. Expected version ">=10.0.0". Got "8.11.3"
+error Found incompatible module.
+info Visit https://yarnpkg.com/en/docs/cli/add for documentation about this command.
 ```
 
 ### pnpm
@@ -103,6 +115,11 @@ $ pnpm --version
 3.8.1
 
 $ pnpm add test-engines-node-version-check@0.1.1
+Already up-to-date
+Resolving: total 1, reused 0, downloaded 1, done
+
+dependencies:
++ test-engines-node-version-check 0.1.1
 ```
 
 ## Supported Node.js version `v10.24.0`
