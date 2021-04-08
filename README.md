@@ -4,9 +4,14 @@ Tests experience for deprecated Node.js versions in package managers using engin
 
 ## With engines field
 
-### Unsupported Node.js version `v8.11.3`
+Testing with Node.js version `v8.11.3`
 
-#### npm
+```console
+$ node --version
+v8.11.3
+```
+
+### npm
 
 The package installation succeeds, as engine-strict is not defined.
 
@@ -23,7 +28,7 @@ npm WARN test-warning@1.0.0 No repository field.
 added 1 package in 0.725s
 ```
 
-#### yarn
+### yarn
 
 The package installation fails.
 
@@ -41,7 +46,7 @@ error Found incompatible module.
 info Visit https://yarnpkg.com/en/docs/cli/add for documentation about this command.
 ```
 
-#### pnpm
+### pnpm
 
 The package installation succeeds, as engine-strict is not defined.
 
@@ -57,9 +62,14 @@ dependencies:
 + test-engines-node-version-check 0.0.2
 ```
 
-### Supported Node.js version `v10.24.0`
+## Supported Node.js version `v10.24.0`
 
-#### npm
+```console
+$ node --version
+v10.24.0
+```
+
+### npm
 
 The package installation succeeds.
 
@@ -77,7 +87,7 @@ added 1 package from 1 contributor and audited 1 package in 0.544s
 found 0 vulnerabilities
 ```
 
-#### yarn
+### yarn
 
 The package installation succeeds.
 
@@ -102,7 +112,7 @@ info All dependencies
 ✨  Done in 0.28s.
 ```
 
-#### pnpm
+### pnpm
 
 The package installation succeeds.
 
