@@ -1,6 +1,6 @@
 {
   "name": "test-engines-node-version-check",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Tests experience for deprecated Node.js versions in package managers using engines field",
   "main": "index.js",
   "repository": "git@github.com:trivikr/test-engines-node-version-check.git",

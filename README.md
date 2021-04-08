@@ -4,9 +4,14 @@ Tests experience for deprecated Node.js versions in package managers using engin
 
 ## With engines field
 
-### Unsupported Node.js version `v8.11.3`
+Testing with Node.js version `v8.11.3`
 
-#### npm
+```console
+$ node --version
+v8.11.3
+```
+
+### npm
 
 The package installation succeeds, as engine-strict is not defined.
 
@@ -23,7 +28,7 @@ npm WARN test-warning@1.0.0 No repository field.
 added 1 package in 0.725s
 ```
 
-#### yarn
+### yarn
 
 The package installation fails.
 
@@ -41,7 +46,7 @@ error Found incompatible module.
 info Visit https://yarnpkg.com/en/docs/cli/add for documentation about this command.
 ```
 
-#### pnpm
+### pnpm
 
 The package installation succeeds, as engine-strict is not defined.
 
@@ -57,9 +62,74 @@ dependencies:
 + test-engines-node-version-check 0.0.2
 ```
 
-### Supported Node.js version `v10.24.0`
+## With engines field and engineStrict=true
 
-#### npm
+Testing with Node.js version `v8.11.3`
+
+```console
+$ node --version
+v8.11.3
+```
+
+### npm
+
+The package installation succeeds, as engine-strict is not defined.
+
+```console
+$ npm --version
+5.6.0
+
+$ npm install test-engines-node-version-check@0.1.1
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN test-warning@1.0.0 No description
+npm WARN test-warning@1.0.0 No repository field.
+
++ test-engines-node-version-check@0.1.1
+added 1 package in 0.796s
+```
+
+### yarn
+
+The package installation fails.
+
+```console
+$ yarn --version
+1.22.10
+
+$ yarn add test-engines-node-version-check@0.1.1
+yarn add v1.22.10
+info No lockfile found.
+[1/4] 🔍  Resolving packages...
+[2/4] 🚚  Fetching packages...
+error test-engines-node-version-check@0.1.1: The engine "node" is incompatible with this module. Expected version ">=10.0.0". Got "8.11.3"
+error Found incompatible module.
+info Visit https://yarnpkg.com/en/docs/cli/add for documentation about this command.
+```
+
+### pnpm
+
+The package installation succeeds, as engine-strict is not defined.
+
+```console
+$ pnpm --version
+3.8.1
+
+$ pnpm add test-engines-node-version-check@0.1.1
+Already up-to-date
+Resolving: total 1, reused 0, downloaded 1, done
+
+dependencies:
++ test-engines-node-version-check 0.1.1
+```
+
+## Supported Node.js version `v10.24.0`
+
+```console
+$ node --version
+v10.24.0
+```
+
+### npm
 
 The package installation succeeds.
 
@@ -77,7 +147,7 @@ added 1 package from 1 contributor and audited 1 package in 0.544s
 found 0 vulnerabilities
 ```
 
-#### yarn
+### yarn
 
 The package installation succeeds.
 
@@ -102,7 +172,7 @@ info All dependencies
 ✨  Done in 0.28s.
 ```
 
-#### pnpm
+### pnpm
 
 The package installation succeeds.
 
