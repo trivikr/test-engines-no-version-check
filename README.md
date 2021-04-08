@@ -62,6 +62,49 @@ dependencies:
 + test-engines-node-version-check 0.0.2
 ```
 
+## With engines field and engineStrict=true
+
+Testing with Node.js version `v8.11.3`
+
+```console
+$ node --version
+v8.11.3
+```
+
+### npm
+
+The package installation succeeds, as engine-strict is not defined.
+
+```console
+$ npm --version
+5.6.0
+
+$ npm install test-engines-node-version-check@0.1.1
+
+```
+
+### yarn
+
+The package installation fails.
+
+```console
+$ yarn --version
+1.22.10
+
+$ yarn add test-engines-node-version-check@0.1.1
+```
+
+### pnpm
+
+The package installation succeeds, as engine-strict is not defined.
+
+```console
+$ pnpm --version
+3.8.1
+
+$ pnpm add test-engines-node-version-check@0.1.1
+```
+
 ## Supported Node.js version `v10.24.0`
 
 ```console
