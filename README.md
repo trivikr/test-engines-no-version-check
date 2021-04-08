@@ -62,7 +62,72 @@ dependencies:
 + test-engines-node-version-check 0.0.2
 ```
 
+## With engines field and engine-strict=true in user .npmrc
+
+Testing with Node.js version `v8.11.3`
+
+```console
+$ node --version
+v8.11.3
+```
+
+### npm
+
+The package installation fails.
+
+```console
+$ npm --version
+5.6.0
+
+$ npm install test-engines-node-version-check@0.0.2
+npm ERR! code ENOTSUP
+npm ERR! notsup Unsupported engine for test-engines-node-version-check@0.0.2: wanted: {"node":">=10.0.0"} (current: {"node":"8.11.3","npm":"5.6.0"})
+npm ERR! notsup Not compatible with your version of node/npm: test-engines-node-version-check@0.0.2
+npm ERR! notsup Not compatible with your version of node/npm: test-engines-node-version-check@0.0.2
+npm ERR! notsup Required: {"node":">=10.0.0"}
+npm ERR! notsup Actual:   {"npm":"5.6.0","node":"8.11.3"}
+```
+
+### yarn
+
+The package installation fails.
+
+```console
+$ yarn --version
+1.22.10
+
+$ yarn add test-engines-node-version-check@0.0.2
+yarn add v1.22.10
+info No lockfile found.
+[1/4] 🔍  Resolving packages...
+[2/4] 🚚  Fetching packages...
+error test-engines-node-version-check@0.0.2: The engine "node" is incompatible with this module. Expected version ">=10.0.0". Got "8.11.3"
+error Found incompatible module.
+info Visit https://yarnpkg.com/en/docs/cli/add for documentation about this command.
+```
+
+### pnpm
+
+The package installation fails.
+
+```console
+$ pnpm --version
+3.8.1
+
+$ pnpm add test-engines-node-version-check@0.0.2
+ ERROR  Your Node version is incompatible with "registry.npmjs.org/test-engines-node-version-check/0.0.2".
+
+Expected version: >=10.0.0
+Got: v8.11.3
+
+This is happening because the package's manifest has an engines.node field specified.
+To fix this issue, install the required Node version.
+```
+
 ## With engines field and engineStrict=true
+
+The feature engineStrict was used prior to npm 3.0.0, and it was used
+to treat this package as if the user had set `engine-strict`. It is no longer used.
 
 Testing with Node.js version `v8.11.3`
 
